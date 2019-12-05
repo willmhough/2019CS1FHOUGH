@@ -14,7 +14,7 @@ foodImg.src = "food.png";
 
 // load audio files
 
-let dead = new Audio();
+let death = new Audio();
 let eat = new Audio();
 let up = new Audio();
 let right = new Audio();
@@ -71,7 +71,7 @@ function direction(event){
     }
 }
 
-// cheack collision function
+// check collision function
 function collision(head,array){
     for(let i = 0; i < array.length; i++){
         if(head.x == array[i].x && head.y == array[i].y){
@@ -85,7 +85,7 @@ function collision(head,array){
 
 function draw(){
     
-    ctx.drawImage(ground,0,0);
+    ctx.drawImage(ground,0,0,ground.width,ground.height,0,0,1800,400);
     
     for( let i = 0; i < snake.length ; i++){
         ctx.fillStyle = ( i == 0 )? "blue" : "white";
@@ -95,7 +95,7 @@ function draw(){
         ctx.strokeRect(snake[i].x,snake[i].y,box,box);
     }
     
-    ctx.drawImage(foodImg, food.x, food.y);
+    ctx.drawImage(food,0,0,food.width,food.height,0,0,4,4);
     
     // old head position
     let snakeX = snake[0].x;
@@ -133,6 +133,7 @@ function draw(){
     if(snakeX < box || snakeX > 17 * box || snakeY < 3*box || snakeY > 17*box || collision(newHead,snake)){
         clearInterval(game);
         death.play();
+        ctx.drawImage(death,0,0);
     }
     
     snake.unshift(newHead);
