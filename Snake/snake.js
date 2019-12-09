@@ -5,13 +5,11 @@ const ctx = cvs.getContext("2d");
 const box = 32;
 
 // load images
-
 const ground = new Image();
 ground.src = "ground.png";
 
 const foodImg = new Image();
 foodImg.src = "food.png";
-
 // load audio files
 
 let death = new Audio();
@@ -21,7 +19,7 @@ let right = new Audio();
 let left = new Audio();
 let down = new Audio();
 
-dead.src = "death.mp3";
+death.src = "death.mp3";
 eat.src = "eat.mp3";
 up.src = "move.mp3";
 right.src = "move.mp3";
@@ -85,9 +83,9 @@ function collision(head,array){
 
 function draw(){
     
-    ctx.drawImage(ground,0,0,ground.width,ground.height,0,0,1800,400);
-    
-    for( let i = 0; i < snake.length ; i++){
+    ctx.drawImage(ground,0,0);
+
+    for( let i = 0; i < snake.length ; i+=5){
         ctx.fillStyle = ( i == 0 )? "blue" : "white";
         ctx.fillRect(snake[i].x,snake[i].y,box,box);
         
@@ -95,7 +93,7 @@ function draw(){
         ctx.strokeRect(snake[i].x,snake[i].y,box,box);
     }
     
-    ctx.drawImage(food,0,0,food.width,food.height,0,0,4,4);
+    ctx.drawImage(foodImg,0,0,foodImg.width,foodImg.height,0,0,10,10);
     
     // old head position
     let snakeX = snake[0].x;
@@ -145,4 +143,4 @@ function draw(){
 
 // call draw function every 100 ms
 
-let game = setInterval(draw,100);
+let game = setInterval(draw,90);
