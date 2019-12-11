@@ -93,7 +93,7 @@ function draw(){
         ctx.strokeRect(snake[i].x,snake[i].y,box,box);
     }
     
-    ctx.drawImage(foodImg,0,0,foodImg.width,foodImg.height,0,0,10,10);
+    ctx.drawImage(food,0,0,food.width,food.height,0,0,10,10);
     
     // old head position
     let snakeX = snake[0].x;
@@ -108,6 +108,7 @@ function draw(){
     // if the snake eats the food
     if(snakeX == food.x && snakeY == food.y){
         score+=5;
+        snake.length+=5;
         eat.play();
         food = {
             x : Math.floor(Math.random()*17+1) * box,
