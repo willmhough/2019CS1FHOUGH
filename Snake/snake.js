@@ -4,20 +4,18 @@ const ctx = cvs.getContext("2d");
 // create the unit
 const box = 32;
 
-// load images
 const ground = new Image();
 ground.src = "ground.png";
 
 const foodImg = new Image();
 foodImg.src = "food.png";
-// load audio files
 
-let death = new Audio();
 let eat = new Audio();
 let up = new Audio();
 let right = new Audio();
 let left = new Audio();
 let down = new Audio();
+let death = new Audio();
 
 death.src = "death.mp3";
 eat.src = "eat.mp3";
@@ -42,11 +40,7 @@ let food = {
     y : Math.floor(Math.random()*15+3) * box
 }
 
-// create the score var
-
 let score = 1;
-
-//control the snake
 
 let d;
 
@@ -79,13 +73,11 @@ function collision(head,array){
     return false;
 }
 
-// draw everything to the canvas
-
 function draw(){
     
     ctx.drawImage(ground,0,0);
-
-    for( let i = 0; i < snake.length ; i+=5){
+    
+    for(let i = 0; i < snake.length ; i++){
         ctx.fillStyle = ( i == 0 )? "blue" : "white";
         ctx.fillRect(snake[i].x,snake[i].y,box,box);
         
@@ -93,13 +85,13 @@ function draw(){
         ctx.strokeRect(snake[i].x,snake[i].y,box,box);
     }
     
-    ctx.drawImage(food,0,0,food.width,food.height,0,0,10,10);
+    ctx.drawImage(foodImg,0,0,food.width,food.height,0,0,10,10);
     
+
     // old head position
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
     
-    // which direction
     if( d == "LEFT") snakeX -= box;
     if( d == "UP") snakeY -= box;
     if( d == "RIGHT") snakeX += box;
@@ -114,25 +106,19 @@ function draw(){
             x : Math.floor(Math.random()*17+1) * box,
             y : Math.floor(Math.random()*15+3) * box
         }
-        // we don't remove the tail
     }else{
-        // remove the tail
         snake.pop();
     }
-    
-    // add new Head
-    
+
     let newHead = {
         x : snakeX,
         y : snakeY
     }
-    
-    // game over
-    
+    console.log(newHead)
     if(snakeX < box || snakeX > 17 * box || snakeY < 3*box || snakeY > 17*box || collision(newHead,snake)){
         clearInterval(game);
         death.play();
-        ctx.drawImage(death,0,0);
+        //ctx.drawImage(death,0,0);
     }
     
     snake.unshift(newHead);
@@ -141,7 +127,5 @@ function draw(){
     ctx.font = "45px Changa one";
     ctx.fillText(score,2*box,1.6*box);
 }
-
-// call draw function every 100 ms
 
 let game = setInterval(draw,90);
