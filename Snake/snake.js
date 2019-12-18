@@ -1,6 +1,17 @@
 const cvs = document.getElementById("snake");
 const ctx = cvs.getContext("2d");
 
+var canvas=document.getElementById("snake");
+
+let resizeCanvas=function(){
+    WIDTH=window.innerWidth;
+    HEIGHT=window.innerHeight;
+}
+
+window.addEventListener('resize',function(){
+    resizeCanvas();
+});
+
 // create the unit
 const box = 32;
 
@@ -37,7 +48,8 @@ snake[0] = {
 
 let food = {
     x : Math.floor(Math.random()*17+1) * box,
-    y : Math.floor(Math.random()*15+3) * box
+    y : Math.floor(Math.random()*15+3) * box,
+
 }
 
 let score = 1;
@@ -75,9 +87,9 @@ function collision(head,array){
 
 function draw(){
     
-    ctx.drawImage(ground,0,0);
+    ctx.drawImage(ground,0,0,ground.height,1000,ground.width,1800);
     
-    for(let i = 0; i < snake.length ; i++){
+    for(let i = 0; i < snake.length ; i+=5){
         ctx.fillStyle = ( i == 0 )? "blue" : "white";
         ctx.fillRect(snake[i].x,snake[i].y,box,box);
         
@@ -123,8 +135,8 @@ function draw(){
     
     snake.unshift(newHead);
     
-    ctx.fillStyle = "white";
-    ctx.font = "45px Changa one";
+    ctx.fillStyle = "#F3F7D1";
+    ctx.font = "35px Changa one";
     ctx.fillText(score,2*box,1.6*box);
 }
 

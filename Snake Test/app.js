@@ -39,6 +39,4 @@ btn.addEventListener("click", function(){ drawModule.init();});
           break;
           }
       }
-
-
 })(window, document, drawModule);

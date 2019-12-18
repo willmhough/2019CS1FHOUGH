@@ -1,10 +1,10 @@
 
 var mycanvas = document.getElementById('mycanvas');
 var ctx = mycanvas.getContext('2d');
-var snakeSize = 10; 
-var w = 350;
-var h = 350;
-var score = 0;
+var snakeSize = 5; 
+var w = 1800;
+var h = 650;
+var score = 1;
 var snake;
-var snakeSize = 10;
+var snakeSize = 5;
 var food;

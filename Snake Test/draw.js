@@ -1,10 +1,9 @@
 
         ctx.fillRect(x*snakeSize+1, y*snakeSize+1, snakeSize-2, snakeSize-2);
-  }
 
   var scoreText = function() {
     var score_text = "Score: " + score;
-    ctx.fillStyle = 'blue';
+    ctx.fillStyle = 'red';
     ctx.fillText(score_text, 145, h-5);
   }
 
@@ -17,9 +16,9 @@
   }
     
   var paint = function(){
-      ctx.fillStyle = 'lightgrey';
+      ctx.fillStyle = 'darkblue';
       ctx.fillRect(0, 0, w, h);
-      ctx.strokeStyle = 'black';
+      ctx.strokeStyle = 'red';
       ctx.strokeRect(0, 0, w, h);
 
       btn.setAttribute('disabled', true);
@@ -55,7 +54,7 @@
           tail.x = snakeX; 
           tail.y = snakeY;
         }
-        //The snake can now eat the food.
+
         snake.unshift(tail); //puts back the tail as the first cell
 
         for(var i = 0; i < snake.length; i++) {
@@ -103,5 +102,5 @@
       init : init
     };
 
-    
+
 }());
