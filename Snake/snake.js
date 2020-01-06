@@ -15,9 +15,6 @@ window.addEventListener('resize',function(){
 // create the unit
 const box = 32;
 
-const ground = new Image();
-ground.src = "ground.png";
-
 const foodImg = new Image();
 foodImg.src = "food.png";
 
@@ -119,6 +116,7 @@ function draw(){
             y : Math.floor(Math.random()*15+3) * box
         }
     }else{
+
         snake.pop();
         console.log("pop");
     }
@@ -127,17 +125,16 @@ function draw(){
         x : snakeX,
         y : snakeY
     }
-    console.log(newHead)
+
     if(snakeX < box || snakeX > 17 * box || snakeY < 3*box || snakeY > 17*box || collision(newHead,snake)){
         clearInterval(game);
         death.play();
-        //ctx.drawImage(death,0,0);
     }
     
     snake.unshift(newHead);
     
-    ctx.fillStyle = "#F3F7D1";
-    ctx.font = "35px Changa one";
+    ctx.fillStyle = "white";
+    ctx.font = "45px Changa one";
     ctx.fillText(score,2*box,1.6*box);
 }
 
