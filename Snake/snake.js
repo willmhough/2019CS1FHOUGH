@@ -87,7 +87,7 @@ function collision(head,array){
 
 function draw(){
     
-    ctx.drawImage(ground,0,0,ground.height,1000,ground.width,1800);
+    
     
     for(let i = 0; i < snake.length ; i+=5){
         ctx.fillStyle = ( i == 0 )? "blue" : "white";
@@ -120,6 +120,7 @@ function draw(){
         }
     }else{
         snake.pop();
+        console.log("pop");
     }
 
     let newHead = {
