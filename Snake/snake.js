@@ -15,8 +15,7 @@ window.addEventListener('resize',function(){
 // create the unit
 const box = 32;
 
-const foodImg = new Image();
-foodImg.src = "food.png";
+const foodImg = document.getElementById("snake");
 
 let eat = new Audio();
 let up = new Audio();
@@ -46,7 +45,7 @@ snake[0] = {
 let food = {
     x : Math.floor(Math.random()*17+1) * box,
     y : Math.floor(Math.random()*15+3) * box,
-
+    
 }
 
 let score = 1;
@@ -84,9 +83,7 @@ function collision(head,array){
 
 function draw(){
     
-    
-    
-    for(let i = 0; i < snake.length ; i+=5){
+    for(let i = 0; i < snake.length ; i++){
         ctx.fillStyle = ( i == 0 )? "blue" : "white";
         ctx.fillRect(snake[i].x,snake[i].y,box,box);
         
@@ -94,9 +91,8 @@ function draw(){
         ctx.strokeRect(snake[i].x,snake[i].y,box,box);
     }
     
-    ctx.drawImage(foodImg,0,0,food.width,food.height,0,0,10,10);
+    var food=document.getElementById("snake");
     
-
     // old head position
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
