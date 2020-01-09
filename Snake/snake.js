@@ -36,8 +36,8 @@ down.src = "move.mp3";
 let snake = [];
 
 snake[0] = {
-    x : 9 * box,
-    y : 10 * box
+    x : 3 * box,
+    y : 3 * box
 };
 
 // create the food
