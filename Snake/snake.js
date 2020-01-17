@@ -91,7 +91,7 @@ function draw(){
         ctx.strokeRect(snake[i].x,snake[i].y,box,box);
     }
     
-    var food=document.getElementById("snake");
+    ctx.drawImage(foodImg, food.x, food.y);
     
     // old head position
     let snakeX = snake[0].x;
