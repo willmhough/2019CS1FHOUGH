@@ -18,3 +18,5 @@ function reverse(message) {
 }
 console.log(reverse("hello"));
 console.log(reverse("good"));
+
+//Challenge 3
