@@ -1,45 +1,30 @@
 //Challenge 1
-
-function hasVowels(string){
-let word = string.toLowerCase()
-if(/[aeiouy]/.test(word)){
-     return true
-  } else {
-     return false
-  }
-}
-
 function noVowels() {
-    var vowels="aeiou";
-    var string="";
+    var vowels='aeiou';
+    var noVowelsString="";
+    
+    
     for(var i=message.length-1; i>=0; i--){
+        var currLetter=message.charAt(i);
+        if(vowels.indexOf(currLetter)<0)
+            noVowelsString += currLetter;
     }
-}
 
-var message="Hello how are you? Nevermind I don't care.";
-vowels.indexOf('')
-message1.indexOf('')
-function removeVowels();{
+    return noVowelsString;
 
 }
 
-function noVowels(message);
+message="Hello how are you?";
+console.log(noVowels(message));
 
-function hasVowels(string){
-  let word = string.toLowerCase()
-  if(/[aeiou]/.test(word)){
-    return true
-  } else if (word.includes("a") && AIsAVowel(word)){
-    return true
-  }else if (word.includes("e") && EIsAVowel(word)){
-    return true
-  }else if (word.includes("i") && EIsAVowel(word)){
-    return true
-  }else if (word.includes("o") && IIsAVowel(word)){
-    return true
-  }else if (word.includes("u") && UIsAVowel(word)){
-    return true
-  } else {
-    return false
-  }
+function everyOther(message){
+    var string="";
+
+    for(var i=0; i<message.length; i+=4){
+        var fourthLetter=message.charAt(i);
+    }
+    return string
 }
+
+message="Hello, how are you?"
+console.log(everyOther(message));
