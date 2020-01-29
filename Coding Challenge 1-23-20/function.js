@@ -21,9 +21,11 @@ function everyOther(message){
     var string="";
 
     for(var i=0; i<message.length; i+=4){
-        var fourthLetter=message.charAt(i);
+        var currLetter=message.charAt(i);
+        if(string.indexOf(currLetter)<4);
+            string += currLetter;
     }
-    return string
+    return noVowelsString
 }
 
 message="Hello, how are you?"

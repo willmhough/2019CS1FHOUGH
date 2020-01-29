@@ -3,6 +3,7 @@ const ctx = cvs.getContext("2d");
 
 var canvas=document.getElementById("snake");
 
+
 let resizeCanvas=function(){
     WIDTH=window.innerWidth;
     HEIGHT=window.innerHeight;
