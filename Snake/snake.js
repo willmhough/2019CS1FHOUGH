@@ -3,16 +3,6 @@ const ctx = cvs.getContext("2d");
 
 var canvas=document.getElementById("snake");
 
-
-let resizeCanvas=function(){
-    WIDTH=window.innerWidth;
-    HEIGHT=window.innerHeight;
-}
-
-window.addEventListener('resize',function(){
-    resizeCanvas();
-});
-
 // create the unit
 const box = 32;
 
@@ -72,6 +62,17 @@ function direction(event){
     }
 }
 
+function resizeGame() {
+    var height = $(window).height();
+    var width = $(window).width();
+    game.width = width;game.height = height;
+    game.stage.bounds.width = width;
+    game.stage.bounds.height = height;
+    if (game.renderType === Phaser.WEBGL){	game.renderer.resize(width, height);}
+}
+
+$(window).resize(function() { window.resizeGame(); } );
+
 // check collision function
 function collision(head,array){
     for(let i = 0; i < array.length; i++){
@@ -83,7 +84,6 @@ function collision(head,array){
 }
 
 function draw(){
-    
     for(let i = 0; i < snake.length ; i++){
         ctx.fillStyle = ( i == 0 )? "blue" : "white";
         ctx.fillRect(snake[i].x,snake[i].y,box,box);
