@@ -2,7 +2,8 @@ const cvs = document.getElementById("snake");
 const ctx = cvs.getContext("2d");
 
 function resizeGame() {
-    var gameArea = document.getElementById('gameArea');
+    console.log("resizing");
+    var gameArea = document.getElementById('snake');
     var widthToHeight = 4 / 3;
     var newWidth = window.innerWidth;
     var newHeight = window.innerHeight;
@@ -21,12 +22,14 @@ function resizeGame() {
     gameArea.style.marginTop = (-newHeight / 2) + 'px';
     gameArea.style.marginLeft = (-newWidth / 2) + 'px';
     
-    var gameCanvas = document.getElementById('gameCanvas');
+    /*var gameCanvas = document.getElementById('canvas');
     gameCanvas.width = newWidth;
-    gameCanvas.height = newHeight;
+    gameCanvas.height = newHeight;*/
 }
 
 window.addEventListener('resize', resizeGame, false);
+
+resizeGame();
 
 // create the unit
 const box = 32;
