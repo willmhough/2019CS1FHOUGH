@@ -4,27 +4,27 @@ const ctx = cvs.getContext("2d");
 function resizeGame() {
     console.log("resizing");
     var gameArea = document.getElementById('snake');
-    var widthToHeight = 4 / 3;
+    var widthToHeight = 1 / 1;
     var newWidth = window.innerWidth;
     var newHeight = window.innerHeight;
     var newWidthToHeight = newWidth / newHeight;
     
     if (newWidthToHeight > widthToHeight) {
         newWidth = newHeight * widthToHeight;
-        gameArea.style.height = newHeight + 'px';
-        gameArea.style.width = newWidth + 'px';
-    } else {
+        gameArea.style.height = newHeight;
+        gameArea.style.width = newWidth;
+    } 
+    
+    else {
         newHeight = newWidth / widthToHeight;
-        gameArea.style.width = newWidth + 'px';
-        gameArea.style.height = newHeight + 'px';
+        gameArea.style.width = newWidth;
+        gameArea.style.height = newHeight;
     }
     
-    gameArea.style.marginTop = (-newHeight / 2) + 'px';
-    gameArea.style.marginLeft = (-newWidth / 2) + 'px';
     
-    /*var gameCanvas = document.getElementById('canvas');
+    var gameCanvas = document.getElementById('canvas');
     gameCanvas.width = newWidth;
-    gameCanvas.height = newHeight;*/
+    gameCanvas.height = newHeight;
 }
 
 window.addEventListener('resize', resizeGame, false);
@@ -34,8 +34,6 @@ resizeGame();
 // create the unit
 const box = 32;
 console.log("box");
-
-const foodImg = document.getElementById("snake");
 
 let eat = new Audio();
 let up = new Audio();
@@ -65,8 +63,9 @@ snake[0] = {
 let food = {
     x : Math.floor(Math.random()*17+1) * box,
     y : Math.floor(Math.random()*15+3) * box,
-    
 }
+
+const foodImg = document.getElementById("snake");
 
 let score = 1;
 
