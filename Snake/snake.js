@@ -29,7 +29,7 @@ function resizeGame() {
 
 window.addEventListener('resize', resizeGame, false);
 
-resizeGame();
+
 
 // create the unit
 const box = 32;
@@ -65,7 +65,7 @@ let food = {
     y : Math.floor(Math.random()*15+3) * box,
 }
 
-const foodImg = document.getElementById("snake");
+const foodImg = document.getElementById("food");
 
 let score = 1;
 
