@@ -15,11 +15,12 @@ const draw = () => {
   ctx.fillRect(0, 0, canvas.width, canvas.height)
 
   // draw snake
-  ctx.fillStyle = 'rgb(0,200,50)'
+  ctx.fillStyle = 'rgb(0,0,153)'
+
   state.snake.map(p => ctx.fillRect(x(p.x), y(p.y), x(1), y(1)))
 
   // draw apples
-  ctx.fillStyle = 'rgb(255,50,0)'
+  ctx.fillStyle = 'rgb(204,0,0)'
   ctx.fillRect(x(state.apple.x), y(state.apple.y), x(1), y(1))
 
   // add crash
