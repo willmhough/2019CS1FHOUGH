@@ -2,10 +2,9 @@ html, body {
   height:          100%;
   margin:          0;
   padding:         0;
-  background:      #121212;
-  text-align:      center;
+  background:      white;
+  text-align:      border-box;
   color:           #fff;
-  display:         flex;
   justify-content: center;
   align-items:     center;
 }

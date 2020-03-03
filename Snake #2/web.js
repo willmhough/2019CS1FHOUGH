@@ -11,7 +11,7 @@ const y = r => Math.round(r * canvas.height / state.rows)
 // Game loop draw
 const draw = () => {
   // clear
-  ctx.fillStyle = '#232323'
+  ctx.fillStyle = '#FFFFFF'
   ctx.fillRect(0, 0, canvas.width, canvas.height)
 
   // draw snake
@@ -20,7 +20,7 @@ const draw = () => {
   state.snake.map(p => ctx.fillRect(x(p.x), y(p.y), x(1), y(1)))
 
   // draw apples
-  ctx.fillStyle = 'rgb(204,0,0)'
+  ctx.fillStyle = 'rgb(255,0,0)'
   ctx.fillRect(x(state.apple.x), y(state.apple.y), x(1), y(1))
 
   // add crash
