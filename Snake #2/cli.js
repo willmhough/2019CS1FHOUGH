@@ -40,4 +40,4 @@ const show = () => console.log('\x1Bc' + Matrix.toString(Matrix.fromState(State)
 const step = () => State = Snake.next(State)
 
 // Main
-setInterval(() => { step(); show() }, 200)
+setInterval(() => { step(); show() }, 2)
