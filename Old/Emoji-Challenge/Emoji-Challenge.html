@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Emoji</title>
+        <style>
+            body{
+                height:200px;
+                width:200px;
+                border-radius:250px;
+                background-color:#101357;
+                display:inline-block;
+            
+            }
+            #face{
+                height:700px;
+                width:700px;
+                border-radius:350px;
+                background-color:yellow;
+                display:inline-block;
+            }
+            .eye{
+                display:inline-block;
+                background-color:black;
+                height:40px;
+                width:40px;
+                border-radius:40px;
+                position:relative;
+                left:20px;
+                bottom:10px;
+            }
+            .pupil{
+                display:inline-block;
+                background-color:white;
+                height:75px;
+                width:75px;
+                border-radius:40px;
+                position:relative;
+                left:20px;
+                bottom:10px;
+            }
+            #leftEye{
+                background-color:black;
+                border-radius:1000px;
+                height:150px;
+                width:150px;
+                display:inline-block;
+                margin:80px;
+                padding-top:40px;
+
+            }
+            #rightEye{
+                background-color:black;
+                height:150px;
+                width:150px;
+                display:inline-block;
+                margin:110px;
+                padding-top:40px;
+                border-radius:1000px;
+               
+            }
+            #mouth{
+                background: url('emojiMouth.png') no-repeat center center;
+                background-size:contain;
+                height:400px;
+                width:400px;
+                display:inline-block;
+                position:relative;
+                left:150px;
+                bottom:60px
+        
+            }
+            #tongue{
+                 background: url('emojiTongue.png') no-repeat center center;
+                 background-size:contain;
+                 height:200px;
+                 display:inline-block;
+                 width:200px;
+                 margin:100px;
+                 padding-top: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='face'>
+            <div id='leftEye' class='eye'>
+                <div class='pupil'></div>
+            </div>
+            <div id='rightEye' class='eye'>
+                <div class='pupil'></div>
+            </div>
+            <div id='mouth'>
+                <div id='tongue'></div>
+            </div>
+        </div>
+    </body>
+</html>
