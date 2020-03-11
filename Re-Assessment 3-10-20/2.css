@@ -1,0 +1,58 @@
+@CHARSET "UTF-8";
+
+.box{
+      width: 198px;
+    height: 100px;
+    font-size:50px;
+    line-height: 100px;
+    text-align: center;
+    display:inline-block;
+    overflow: hidden;
+    border-radius: 20px;
+    font-weight:bold;
+}
+
+#one{
+    background-color: darkorange;
+    color: brown;
+    font-family:'kranky';
+    
+}
+
+#two{
+    background-color: indigo;
+    color: white;
+}
+
+#three{
+    color: white;
+    background-color: darkred;
+}
+
+#four{
+    color: white;
+    background-color: darkred;
+}
+
+#five{
+    color: white;
+    background-color: indigo;
+}
+
+#six{
+    background-color: darkorange;
+    color: black;
+    font-family:'kranky';
+}
+
+#display{
+    width:1200px;
+    height:40px;
+    border-radius:20px;
+    border-style: solid;
+    color: white;
+    font-family:'kranky';
+    text-align:right;
+    padding:6px;
+    font-size: 30px;
+}
